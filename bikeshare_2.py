@@ -4,9 +4,10 @@ import pandas as pd
 CITY_DATA = {'Chicago': 'chicago.csv',
              'New york city': 'new_york_city.csv',
              'Washington': 'washington.csv'}
-CITY_OPTIONS = ['','Chicago', 'New york city', 'Washington']
+CITY_OPTIONS = ['', 'Chicago', 'New york city', 'Washington']
 MONTH_OPTIONS = ['All', 'January', 'February', 'March', 'April', 'May', 'June']
 DAY_OPTIONS = ['All', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+LINE = '-'*40
 
 def get_filters():
     """
@@ -19,7 +20,7 @@ def get_filters():
     """
     print('\nHello! Let\'s explore some US bikeshare data!')
     # get user input for city (chicago, new york city, washington)
-    city_index = get_user_input('city', CITY_OPTIONS, range(1,len(CITY_OPTIONS)))
+    city_index = get_user_input('city', CITY_OPTIONS, range(1, len(CITY_OPTIONS)))
 
     # get user input for month (all, january, february, ... , june)
     month_index = get_user_input('month', MONTH_OPTIONS, range(len(MONTH_OPTIONS)))
@@ -27,7 +28,7 @@ def get_filters():
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day_index = get_user_input('day of week', DAY_OPTIONS, range(len(DAY_OPTIONS)))
 
-    print('-'*40)
+    print(LINE)
     return city_index, month_index, day_index
 
 
@@ -110,7 +111,7 @@ def time_stats(df):
     print("Most common start hour:\n{}\n".format(df['Hour'].mode()[0]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(LINE)
 
 
 def station_stats(df):
@@ -132,7 +133,7 @@ def station_stats(df):
     print("Most frequent trip:\n{}\n".format(df['Trip'].mode()[0]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(LINE)
 
 
 def trip_duration_stats(df):
@@ -148,7 +149,7 @@ def trip_duration_stats(df):
     print("Mean travel time:\n{} seconds\n".format(df['Trip Duration'].mean()))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(LINE)
 
 
 def user_stats(df):
@@ -176,7 +177,7 @@ def user_stats(df):
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(LINE)
 
 
 def main():
@@ -190,12 +191,11 @@ def main():
 
     # while loop ensures a valid user input and handles all errors
     while True:
-        print("\nWould you like to restart? (Example: Enter 1 to choose Yes)")
-        print("1. Yes\n2. No")
+        print("\nWould you like to restart? (Example: Enter 1 to choose Yes)\n1. Yes\n2. No")
         try:
             choice = int(input("Choice: "))
             if choice == 1:
-                print('-'*40)
+                print(LINE)
                 break
             elif choice == 2:
                 break
