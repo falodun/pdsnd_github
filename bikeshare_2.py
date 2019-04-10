@@ -190,8 +190,7 @@ def main():
 
     # while loop ensures a valid user input and handles all errors
     while True:
-        print("\nWould you like to restart? (Example: Enter 1 to choose Yes)")
-        print("1. Yes\n2. No")
+        print("\nWould you like to restart? (Example: Enter 1 to choose Yes)\n1. Yes\n2. No")
         try:
             choice = int(input("Choice: "))
             if choice == 1:
