@@ -4,7 +4,7 @@ import pandas as pd
 CITY_DATA = {'Chicago': 'chicago.csv',
              'New york city': 'new_york_city.csv',
              'Washington': 'washington.csv'}
-CITY_OPTIONS = ['','Chicago', 'New york city', 'Washington']
+CITY_OPTIONS = ['', 'Chicago', 'New york city', 'Washington']
 MONTH_OPTIONS = ['All', 'January', 'February', 'March', 'April', 'May', 'June']
 DAY_OPTIONS = ['All', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
@@ -19,7 +19,7 @@ def get_filters():
     """
     print('\nHello! Let\'s explore some US bikeshare data!')
     # get user input for city (chicago, new york city, washington)
-    city_index = get_user_input('city', CITY_OPTIONS, range(1,len(CITY_OPTIONS)))
+    city_index = get_user_input('city', CITY_OPTIONS, range(1, len(CITY_OPTIONS)))
 
     # get user input for month (all, january, february, ... , june)
     month_index = get_user_input('month', MONTH_OPTIONS, range(len(MONTH_OPTIONS)))
