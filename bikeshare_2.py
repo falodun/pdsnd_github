@@ -7,6 +7,7 @@ CITY_DATA = {'Chicago': 'chicago.csv',
 CITY_OPTIONS = ['', 'Chicago', 'New york city', 'Washington']
 MONTH_OPTIONS = ['All', 'January', 'February', 'March', 'April', 'May', 'June']
 DAY_OPTIONS = ['All', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+LINE = '-'*40
 
 def get_filters():
     """
@@ -27,7 +28,7 @@ def get_filters():
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day_index = get_user_input('day of week', DAY_OPTIONS, range(len(DAY_OPTIONS)))
 
-    print('-'*40)
+    print(LINE)
     return city_index, month_index, day_index
 
 
@@ -110,7 +111,7 @@ def time_stats(df):
     print("Most common start hour:\n{}\n".format(df['Hour'].mode()[0]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(LINE)
 
 
 def station_stats(df):
@@ -132,7 +133,7 @@ def station_stats(df):
     print("Most frequent trip:\n{}\n".format(df['Trip'].mode()[0]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(LINE)
 
 
 def trip_duration_stats(df):
@@ -148,7 +149,7 @@ def trip_duration_stats(df):
     print("Mean travel time:\n{} seconds\n".format(df['Trip Duration'].mean()))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(LINE)
 
 
 def user_stats(df):
@@ -176,7 +177,7 @@ def user_stats(df):
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(LINE)
 
 
 def main():
@@ -194,7 +195,7 @@ def main():
         try:
             choice = int(input("Choice: "))
             if choice == 1:
-                print('-'*40)
+                print(LINE)
                 break
             elif choice == 2:
                 break
